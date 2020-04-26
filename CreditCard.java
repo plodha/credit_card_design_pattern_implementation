@@ -2,11 +2,12 @@ import java.util.Date;
 
 public class CreditCard {
 	private String creditCardNo;
-	private Date expDate;  
+	private Date expDate;
 	private String name;
-	private String cardType;
-	private boolean isValid;
-	
+	private String cardType = "Invalid";
+	private boolean isValid = false;
+
+/*
 	public CreditCard(String creditCardNo, Date expDate, String name) {
 		this.creditCardNo = creditCardNo;
 		this.expDate = expDate;
@@ -14,7 +15,8 @@ public class CreditCard {
 		this.cardType = "Invalid";
 		this.isValid = false;
 	}
-	
+	*/
+
 	public String getCreditCardNo() {
 		return creditCardNo;
 	}
@@ -38,21 +40,23 @@ public class CreditCard {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+
 	public String getCardType() {
 		return cardType;
 	}
-	
+
 	public void setCardType(String cardType) {
 		this.cardType = cardType;
 	}
-	
+
+
 	public boolean getIsValid() {
 		return isValid;
 	}
-	
+
 	public void setIsValid(boolean isValid) {
 		this.isValid = isValid;
 	}
-	
+
 }

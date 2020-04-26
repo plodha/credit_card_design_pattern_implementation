@@ -124,6 +124,9 @@ public class CreditCardIntro {
 		BufferedReader br = null;
 		String line = "";
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+		Date expDate = new Date();
+		String strExpDate = "";
+
 
 		try {
 			br = new BufferedReader(new FileReader(input));
@@ -136,13 +139,22 @@ public class CreditCardIntro {
 				String cardNumber = String.format("%.0f", Double.parseDouble(row[0]));
 
 				// Column 2 Expiration Date
-				Date expDate = formatter.parse(row[1]);
-				String strExpDate = formatter.format(expDate);
+				try {
+					expDate = formatter.parse(row[1]);
+					strExpDate = formatter.format(expDate);
+				}
+				catch(Exception e) {
+					System.out.println("Incorrect Date" + expDate);
+				}
+
 
 				// Column 3 Name
 				String name = row[2];
 
-				CreditCard cc = new CreditCard(cardNumber, expDate, name);
+				CreditCard cc = new CreditCard();
+				cc.setCreditCardNo(cardNumber);
+				cc.setExpDate(expDate);
+				cc.setName(name);
 				Cards.add(cc);
 
 
@@ -190,7 +202,10 @@ public class CreditCardIntro {
 				}
 
 				if(cardNumber != "" && name != "") {
-					CreditCard cc = new CreditCard(cardNumber, expDate, name);
+					CreditCard cc = new CreditCard();
+					cc.setCreditCardNo(cardNumber);
+					cc.setExpDate(expDate);
+					cc.setName(name);;
 					Cards.add(cc);
 
 					//System.out.println("Number: "+ cardNumber + "| ExpDate: " + strExpDate + "| Name: " + name);
@@ -247,7 +262,10 @@ public class CreditCardIntro {
 					// Get Name of Card Holder
 					String name = eElement.getElementsByTagName("NameOfCardholder").item(0).getTextContent();
 
-					CreditCard cc = new CreditCard(cardNumber, expDate, name);
+					CreditCard cc = new CreditCard();
+					cc.setCreditCardNo(cardNumber);
+					cc.setExpDate(expDate);
+					cc.setName(name);
 					Cards.add(cc);
 
 					// Print Statement
@@ -288,7 +306,7 @@ public class CreditCardIntro {
 						sb.append("None");
 					}
 					else {
-						sb.append("Error");
+						sb.append("InvalidCardNumber");
 					}
 					sb.append('\n');
 					System.out.println("Number: "+ cc.getCreditCardNo() + "| Type: " + cc.getCardType()+ "| Status: " + cc.getIsValid());

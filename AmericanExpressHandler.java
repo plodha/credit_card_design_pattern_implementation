@@ -7,21 +7,21 @@ public class AmericanExpressHandler implements Handler {
 
 	@Override
 	public void setNextHandler(Handler nextHandler) {
-		
+
 		this.nextHandler = nextHandler;
 
 	}
 
 	@Override
 	public void checkCreditCardNo(CreditCard cc) {
-		
+
 		String number = cc.getCreditCardNo();
-		
+
 		if((number.charAt(0) == '3') && ((number.charAt(1) == '4') || (number.charAt(1) == '7') && number.length() == 15) ) {
-			cc.setCardType("American Express");
+			cc.setCardType("AmericanExpress");
 			cc.setIsValid(true);
 		}
-		
+
 		else {
 			nextHandler.checkCreditCardNo(cc);
 		}
