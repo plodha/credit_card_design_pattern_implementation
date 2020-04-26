@@ -191,10 +191,17 @@ public class CreditCardIntro {
 					line = br.readLine();
 				}
 				if (line.contains("ExpirationDate")) {
-					String cleanedString = cleaner(line);
-					expDate = formatter.parse(cleanedString);
-					strExpDate = formatter.format(expDate);
-					line = br.readLine();
+					try {
+						String cleanedString = cleaner(line);
+						expDate = formatter.parse(cleanedString);
+						strExpDate = formatter.format(expDate);
+						line = br.readLine();
+					}
+					catch(Exception e) {
+						System.out.println("Incorrect Date" + expDate);
+						line = br.readLine();
+					}
+
 				}
 				if (line.contains("NameOfCardholder")) {
 					String cleanedString = cleaner(line);
@@ -237,6 +244,7 @@ public class CreditCardIntro {
 			Document doc = builder.parse(xmlFile);
 
 			doc.getDocumentElement();
+			Date expDate = new Date();
 
 			//System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
@@ -255,9 +263,15 @@ public class CreditCardIntro {
 					// Get Card Number
 					String cardNumber = String.format("%.0f", Double.parseDouble(eElement.getElementsByTagName("CardNumber").item(0).getTextContent()));
 
+					try {
+						expDate = formatter.parse(eElement.getElementsByTagName("ExpirationDate").item(0).getTextContent());
+						String strExpDate = formatter.format(expDate);
+					}
+					catch(Exception e) {
+						System.out.println("Incorrect Date" + expDate);
+					}
 					// Get Expiration Date
-					Date expDate = formatter.parse(eElement.getElementsByTagName("ExpirationDate").item(0).getTextContent());
-					String strExpDate = formatter.format(expDate);
+
 
 					// Get Name of Card Holder
 					String name = eElement.getElementsByTagName("NameOfCardholder").item(0).getTextContent();
@@ -344,7 +358,7 @@ public class CreditCardIntro {
 					myWriter.write('\n');
 				}
 				else {
-					myWriter.write("\"Error\": \"Error\"");
+					myWriter.write("\"Error\": \"InvalidCardNumber\"");
 					myWriter.write('\n');
 				}
 				if(i == Cards.size() - 1) {
@@ -402,7 +416,7 @@ public class CreditCardIntro {
 					rowElement.appendChild(Error);
 				}
 				else {
-					Error.appendChild(doc.createTextNode("Error"));
+					Error.appendChild(doc.createTextNode("InvalidCardNumber"));
 					rowElement.appendChild(Error);
 				}
 
