@@ -13,7 +13,7 @@ public class DiscoverHandler implements Handler {
 	public CreditCard checkCreditCardNo(String creditCardNo, Date expDate, String name) {
 		String number = creditCardNo;
 
-		if((number.substring(0, 3).equals("6011")) && number.length() == 16 ) {
+		if((number.substring(0, 4).equals("6011")) && number.length() == 16 ) {
 			DiscoverCC discover = new DiscoverCC(creditCardNo, expDate, name, "Discover", true);
 			return discover;
 		}

@@ -73,11 +73,6 @@ public class main {
 		}
 
 
-		for (int i = 0; i < Cards.size(); i++) {
-			System.out.println(Cards.get(i));
-		}
-
-
 	}
 
 }
