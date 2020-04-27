@@ -28,7 +28,7 @@ public class CreditCardIntroTest {
 	    assertTrue(status);
 	    System.out.println("Test Credit Card Validity: " +status);
 	}
-	
+
 	@Test
 	public void test2() {
 		CreditCard cc = new CreditCard();
@@ -52,7 +52,247 @@ public class CreditCardIntroTest {
 	    assertTrue(status);
 	    System.out.println("Test Date: " +status);
 	}
-	
+
+	@Test
+	public void test3() {
+		CreditCard cc = new CreditCard();
+	    cc.setCreditCardNo("asd5410000000000000");
+	    cc.setName("Pranav Lodha");
+	    Date expDate = new Date();
+	    cc.setExpDate(expDate);
+
+	    VisaHandler VH = new VisaHandler();
+		MasterCardHandler MCH = new MasterCardHandler();
+		AmericanExpressHandler AEH = new AmericanExpressHandler();
+		DiscoverHandler DH = new DiscoverHandler();
+
+	    MCH.setNextHandler(AEH);
+		AEH.setNextHandler(DH);
+		DH.setNextHandler(VH);
+
+	    MCH.checkCreditCardNo(cc);
+
+	    boolean status = cc.getIsValid();
+	    assertTrue(status);
+	    System.out.println("Test Credit Card Type: " +status);
+	}
+
+	@Test
+	public void test3() {
+		CreditCard cc = new CreditCard();
+	    cc.setCreditCardNo("asd5410000000000000");
+	    cc.setName("Pranav Lodha");
+	    Date expDate = new Date();
+	    cc.setExpDate(expDate);
+
+	    VisaHandler VH = new VisaHandler();
+		MasterCardHandler MCH = new MasterCardHandler();
+		AmericanExpressHandler AEH = new AmericanExpressHandler();
+		DiscoverHandler DH = new DiscoverHandler();
+
+	    MCH.setNextHandler(AEH);
+		AEH.setNextHandler(DH);
+		DH.setNextHandler(VH);
+
+	    MCH.checkCreditCardNo(cc);
+
+	    boolean status = cc.getIsValid();
+	    assertTrue(status);
+	    System.out.println("Test Credit Card Type: " +status);
+	}
+
+	@Test
+	public void test3() {
+		CreditCard cc = new CreditCard();
+	    cc.setCreditCardNo("asd5410000000000000");
+	    cc.setName("Pranav Lodha");
+	    Date expDate = new Date();
+	    cc.setExpDate(expDate);
+
+	    VisaHandler VH = new VisaHandler();
+		MasterCardHandler MCH = new MasterCardHandler();
+		AmericanExpressHandler AEH = new AmericanExpressHandler();
+		DiscoverHandler DH = new DiscoverHandler();
+
+	    MCH.setNextHandler(AEH);
+		AEH.setNextHandler(DH);
+		DH.setNextHandler(VH);
+
+	    MCH.checkCreditCardNo(cc);
+
+	    boolean status = cc.getIsValid();
+	    assertTrue(status);
+	    System.out.println("Test Credit Card Type: " +status);
+	}
+
+	@Test
+	public void test3() {
+		CreditCard cc = new CreditCard();
+	    cc.setCreditCardNo("asd5410000000000000");
+	    cc.setName("Pranav Lodha");
+	    Date expDate = new Date();
+	    cc.setExpDate(expDate);
+
+	    VisaHandler VH = new VisaHandler();
+		MasterCardHandler MCH = new MasterCardHandler();
+		AmericanExpressHandler AEH = new AmericanExpressHandler();
+		DiscoverHandler DH = new DiscoverHandler();
+
+	    MCH.setNextHandler(AEH);
+		AEH.setNextHandler(DH);
+		DH.setNextHandler(VH);
+
+	    MCH.checkCreditCardNo(cc);
+
+	    boolean status = cc.getIsValid();
+	    assertTrue(status);
+	    System.out.println("Test Credit Card Type: " +status);
+	}
+
+	@Test
+	public void test3() {
+		CreditCard cc = new CreditCard();
+	    cc.setCreditCardNo("asd5410000000000000");
+	    cc.setName("Pranav Lodha");
+	    Date expDate = new Date();
+	    cc.setExpDate(expDate);
+
+	    VisaHandler VH = new VisaHandler();
+		MasterCardHandler MCH = new MasterCardHandler();
+		AmericanExpressHandler AEH = new AmericanExpressHandler();
+		DiscoverHandler DH = new DiscoverHandler();
+
+	    MCH.setNextHandler(AEH);
+		AEH.setNextHandler(DH);
+		DH.setNextHandler(VH);
+
+	    MCH.checkCreditCardNo(cc);
+
+	    boolean status = cc.getIsValid();
+	    assertTrue(status);
+	    System.out.println("Test Credit Card Type: " +status);
+	}
+
+	@Test
+	public void test3() {
+		CreditCard cc = new CreditCard();
+	    cc.setCreditCardNo("asd5410000000000000");
+	    cc.setName("Pranav Lodha");
+	    Date expDate = new Date();
+	    cc.setExpDate(expDate);
+
+	    VisaHandler VH = new VisaHandler();
+		MasterCardHandler MCH = new MasterCardHandler();
+		AmericanExpressHandler AEH = new AmericanExpressHandler();
+		DiscoverHandler DH = new DiscoverHandler();
+
+	    MCH.setNextHandler(AEH);
+		AEH.setNextHandler(DH);
+		DH.setNextHandler(VH);
+
+	    MCH.checkCreditCardNo(cc);
+
+	    boolean status = cc.getIsValid();
+	    assertTrue(status);
+	    System.out.println("Test Credit Card Type: " +status);
+	}
+
+	@Test
+	public void test3() {
+		CreditCard cc = new CreditCard();
+	    cc.setCreditCardNo("asd5410000000000000");
+	    cc.setName("Pranav Lodha");
+	    Date expDate = new Date();
+	    cc.setExpDate(expDate);
+
+	    VisaHandler VH = new VisaHandler();
+		MasterCardHandler MCH = new MasterCardHandler();
+		AmericanExpressHandler AEH = new AmericanExpressHandler();
+		DiscoverHandler DH = new DiscoverHandler();
+
+	    MCH.setNextHandler(AEH);
+		AEH.setNextHandler(DH);
+		DH.setNextHandler(VH);
+
+	    MCH.checkCreditCardNo(cc);
+
+	    boolean status = cc.getIsValid();
+	    assertTrue(status);
+	    System.out.println("Test Credit Card Type: " +status);
+	}
+
+	@Test
+	public void test3() {
+		CreditCard cc = new CreditCard();
+	    cc.setCreditCardNo("asd5410000000000000");
+	    cc.setName("Pranav Lodha");
+	    Date expDate = new Date();
+	    cc.setExpDate(expDate);
+
+	    VisaHandler VH = new VisaHandler();
+		MasterCardHandler MCH = new MasterCardHandler();
+		AmericanExpressHandler AEH = new AmericanExpressHandler();
+		DiscoverHandler DH = new DiscoverHandler();
+
+	    MCH.setNextHandler(AEH);
+		AEH.setNextHandler(DH);
+		DH.setNextHandler(VH);
+
+	    MCH.checkCreditCardNo(cc);
+
+	    boolean status = cc.getIsValid();
+	    assertTrue(status);
+	    System.out.println("Test Credit Card Type: " +status);
+	}
+
+	@Test
+	public void test3() {
+		CreditCard cc = new CreditCard();
+	    cc.setCreditCardNo("asd5410000000000000");
+	    cc.setName("Pranav Lodha");
+	    Date expDate = new Date();
+	    cc.setExpDate(expDate);
+
+	    VisaHandler VH = new VisaHandler();
+		MasterCardHandler MCH = new MasterCardHandler();
+		AmericanExpressHandler AEH = new AmericanExpressHandler();
+		DiscoverHandler DH = new DiscoverHandler();
+
+	    MCH.setNextHandler(AEH);
+		AEH.setNextHandler(DH);
+		DH.setNextHandler(VH);
+
+	    MCH.checkCreditCardNo(cc);
+
+	    boolean status = cc.getIsValid();
+	    assertTrue(status);
+	    System.out.println("Test Credit Card Type: " +status);
+	}
+
+	@Test
+	public void test3() {
+		CreditCard cc = new CreditCard();
+	    cc.setCreditCardNo("asd5410000000000000");
+	    cc.setName("Pranav Lodha");
+	    Date expDate = new Date();
+	    cc.setExpDate(expDate);
+
+	    VisaHandler VH = new VisaHandler();
+		MasterCardHandler MCH = new MasterCardHandler();
+		AmericanExpressHandler AEH = new AmericanExpressHandler();
+		DiscoverHandler DH = new DiscoverHandler();
+
+	    MCH.setNextHandler(AEH);
+		AEH.setNextHandler(DH);
+		DH.setNextHandler(VH);
+
+	    MCH.checkCreditCardNo(cc);
+
+	    boolean status = cc.getIsValid();
+	    assertTrue(status);
+	    System.out.println("Test Credit Card Type: " +status);
+	}
+
 	@Test
 	public void test3() {
 		CreditCard cc = new CreditCard();

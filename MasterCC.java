@@ -1,15 +1,10 @@
+
 import java.util.Date;
 
 public class MasterCC extends CreditCard {
 
-	private String cardType;
-
-  public String getCardType() {
-		return cardType;
-	}
-
-	public void setCardType(String cardType) {
-		this.cardType = cardType;
+	public MasterCC(String cardNumber, Date expDate, String name, String cardType, boolean isValid) {
+		super(cardNumber, expDate, name, cardType, isValid);
 	}
 
 }

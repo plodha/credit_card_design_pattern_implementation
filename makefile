@@ -3,10 +3,19 @@ JCC = javac
 
 JFLAGS = -g
 
-default: CreditCardIntro.class CreditCard.class AmexCC.class VisaCC.class MasterCC.class DiscoverCC.class MasterCardHandler.class AmericanExpressHandler.class DiscoverHandler.class VisaHandler.class
+default: main.class CreditCard.class AmexCC.class VisaCC.class MasterCC.class DiscoverCC.class MasterCardHandler.class AmericanExpressHandler.class DiscoverHandler.class VisaHandler.class csv.class json.class xml.class
 
-CreditCardIntro.class: CreditCardIntro.java
-		$(JCC) $(JFLAGS) CreditCardIntro.java
+main.class: main.java
+		$(JCC) $(JFLAGS) main.java
+
+csv.class: csv.java
+		$(JCC) $(JFLAGS) csv.java
+
+json.class: json.java
+		$(JCC) $(JFLAGS) json.java
+
+xml.class: xml.java
+		$(JCC) $(JFLAGS) xml.java
 
 CreditCard.class: CreditCard.java
 		$(JCC) $(JFLAGS) CreditCard.java
@@ -34,6 +43,8 @@ DiscoverHandler.class: DiscoverHandler.java
 
 VisaHandler.class: VisaHandler.java
 		$(JCC) $(JFLAGS) VisaHandler.java
+
+
 
 clean:
 				$(RM) *.class

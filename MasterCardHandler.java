@@ -1,30 +1,26 @@
 
+import java.util.Date;
 
-// First digit is a 5, second digit is in range 1 through 5 inclusive. Only valid length of number is 16 digits.
 public class MasterCardHandler implements Handler {
-	
+
 	private Handler nextHandler;
 
-	@Override
 	public void setNextHandler(Handler nextHandler) {
-		
 		this.nextHandler = nextHandler;
 
 	}
 
-	@Override
-	public void checkCreditCardNo(CreditCard cc) {
-		
-		String number = cc.getCreditCardNo();
-		
+	public CreditCard checkCreditCardNo(String creditCardNo, Date expDate, String name) {
+		String number = creditCardNo;
+
 		if((number.charAt(0) == '5') && ((Character.getNumericValue(number.charAt(1)) >= 1) && (Character.getNumericValue(number.charAt(1)) <= 5) && number.length() == 16) ) {
-			cc.setCardType("MasterCard");
-			cc.setIsValid(true);
+			MasterCC master = new MasterCC(creditCardNo, expDate, name, "MasterCard", true);
+			return master;
 		}
-		
 		else {
-			nextHandler.checkCreditCardNo(cc);
+			return(nextHandler.checkCreditCardNo(creditCardNo, expDate, name));
 		}
+
 
 	}
 
