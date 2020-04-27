@@ -14,5 +14,5 @@ make
 
 ## Running program
 ```
-java CreditCardIntro inputfile outputfile
+java main inputfile outputfile
 ```
