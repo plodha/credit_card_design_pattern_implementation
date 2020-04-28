@@ -3,6 +3,8 @@ Design a credit card validation program that accepts a csv, json, or xml file an
 
 Design Pattern: Chain-of-Responsibility, factory pattern
 
+IDE: eclipse
+
 ## Version
 JAVA version = 1.8.0_24
 
